@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="fonts/iconfont (2).css">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #app{
+        width: 100px;
+        height: 100%;
+        background-color: #fafafa;
+        position: absolute;
+        border-right: 1px #ccc solid;
+
+        z-index: 9;
+    }
+    #app li{
+        width: 100%;
+        height: 30px;
+        margin-top: 30px;
+        background: #cccccc;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        color: #fafafa;
+        z-index: 9;
+    }
+    a{
+        text-decoration: none;
+        color: #fafafa;
+    }
+    li{
+        list-style: none;
+    }
+    .list{
+        width: 100%;
+        /* height: 100%; */
+        position: absolute;
+        overflow: hidden;
+     }
+    
+    .list li{
+        font-weight: 700;
+        float: left;
+        width: 100%;
+        height: 50px;
+        /* background-color: azure; */
+        margin-left: 100px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-top: none;
+        line-height: 50px;
+        padding-left: 30px;
+    }
+    .list li:hover{
+        background-color: #fafafa;
+    }
+    footer{
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        background-color: #f6f6f8;
+        position: fixed;
+        border-top: solid 1px #ccc;
+    }
+    .play{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: black 2px solid;
+        text-align:center;
+        line-height: 40px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -20px;
+        margin-top: -20px;
+        cursor: pointer;
+    }
+    .top i,
+    .play i{
+        font-size: 30px;
+    }
+    .top{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: black 2px solid;
+        text-align:center;
+        line-height: 20px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -90px;
+        margin-top: -15px;
+        cursor: pointer;
+    }
+    .next{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: black 2px solid;
+        text-align:center;
+        line-height: 20px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: 60px;
+        margin-top: -15px;
+        cursor: pointer;
+    }
+    .top img,
+    .next img{
+        width: 100%;
+        height: 100%;
+    }
+    .singer{
+        width: 300px;
+        height: 100%;
+        /* background-color: turquoise; */
+        position: relative;
+        margin-left: -100px;
+        left: 30%;
+        
+    }
+    .singer h2{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        
+        line-height: 50px;
+       
+    }
+    .singer h3{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+       
+        line-height: 120px;
+        
+    }
+    .tu{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        left: 18%;
+        top:50%;
+        position: absolute;
+        margin-top: -30px;
+        overflow: hidden;
+        border:2px solid black;
+    }
+    .tu img{
+        width: 100%;
+        height: 100%;
+    }
+    .title span{
+        width:400px;
+        height: 100%;
+        /* border-right: #ccc 1px solid; */
+        display: block;
+        float: left;
+        padding-left:80px;
+    }
+    .song span{
+        width:400px;
+        height: 100%;
+        /* border-right: #ccc 1px solid; */
+        display: block;
+        float: left;
+       padding-left:80px;
+       font-weight: 100;
+    }
+    .title span:nth-child(3){
+        border-right: none;
+    }
+</style>
+<link href="fonts/iconfont.css" rel="stylesheet">
+<body>
+<div id="app">
+    <ul>
+        <a href="index.html"> <li>返回首页</li></a>
+        <li>关于我们</li>
+        <li>联系我们</li>
+        <li>联系修正</li>
+    </ul>
+</div>
+<ul class="list">
+    <audio autoplay :src="getSonger"></audio>
+    <li class="title">
+       <span>音乐标题</span>
+       <span>歌手</span>
+       <span>专辑</span> 
+    </li>
+    <li v-for="(item,index) in datas" @click="change(index)" class="song">
+        <span>{{item.name}}</span>
+    <span>{{item.songer}}</span>
+    <span>{{item.album}}</span>
+</li>
+</ul>
+<footer class="footer">
+    <div class="singer">
+    <h2>{{num}}</h2>
+    <h3>{{name}}</h3>
+</div>
+    <div class="tu">
+        <img :src="imgSrc" alt="">
+        <img src="images/9（7）.jpg" alt="">
+        <img src="images/9 (4).jpg" alt="">
+    </div>
+    <div class="play">
+        <i class="iconfont icon-icon_play">
+        </i>
+    </div>
+    <div class="top">
+       <img src="images/上一曲.png" alt="">
+    </div>
+    <div class="next">
+            <img src="images/下一曲.png" alt="">
+     </div>
+</footer>
+</body>
+</html>
+<script src="js/vue.js"></script>
+<script src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+Vue.prototype.$bus = new Vue()
+// var datas =
+var newV = new Vue({
+    el:".list",
+    data(){
+        return{
+
+            datas: [{"name":"天外来物","src":"mp3/薛之谦 - 天外来物.flac","songer":"薛之谦","imgSrc":"images/4.jpg","album":"天外来物"},
+            {"name":"最佳歌手","src":"mp3/许嵩 - 最佳歌手.flac","songer":"许嵩","imgSrc":"images/9.4.jpg","album":"青年晚报"},
+            {"name":"稻香","src":"mp3/周杰伦 - 稻香 (Demo).mp3","songer":"周杰伦","imgSrc":"images/9.5.jpg","album":"魔杰座"},
+            {"name":"年少有为","src":"mp3/李荣浩 - 年少有为.mp3","songer":"李荣浩","imgSrc":"images/9.6.jpg","album":"耳朵"},
+            {"name":"借","src":"mp3/毛不易 - 借 (Live).mp3","songer":"毛不易","imgSrc":"images/8.jpg","album":"平凡的一天"},
+            {"name":"世间美好与你环环相扣","src":"mp3/莫籽 - 世间美好与你环环相扣 [mqms2].mp3","songer":"莫籽","imgSrc":"images/9.1.jpg","album":"听闻余生"},
+            {"name":"青花瓷","src":"mp3/周杰伦 - 青花瓷.mp3","songer":"周杰伦","imgSrc":"images/9.2.jpg","album":"我很忙"},
+            {"name":"盛夏","src":"mp3/毛不易 - 盛夏 (Live).flac","songer":"毛不易","imgSrc":"images/8.jpg","album":"平凡的一天"},
+            {"name":"麻雀","src":"mp3/李荣浩 - 麻雀.mp3","songer":"李荣浩","imgSrc":"images/9.7.jpg","album":"麻雀"},
+            {"name":"动物世界","src":"mp3/薛之谦 - 动物世界 .flac","songer":"薛之谦","imgSrc":"images/9.3.jpg","album":"渡"},
+                {"name":"天外来物","src":"mp3/薛之谦 - 天外来物.flac","songer":"薛之谦","imgSrc":"images/4.jpg","album":"天外来物"},
+                {"name":"最佳歌手","src":"mp3/许嵩 - 最佳歌手.flac","songer":"许嵩","imgSrc":"images/9.4.jpg","album":"青年晚报"},
+                {"name":"稻香","src":"mp3/周杰伦 - 稻香 (Demo).mp3","songer":"周杰伦","imgSrc":"images/9.5.jpg","album":"魔杰座"}
+
+               ],
+            indexi:0,
+            name:"",
+            songer:"",
+            imgSrc:""
+        }
+    },
+    computed:{
+        getSonger:function(){
+            return this.datas[this.indexi].src
+        },
+        getName:function(){
+            this.name=this.datas[this.indexi].name;
+            this.songer =  this.datas[this.indexi].songer;
+            this.imgSrc =  this.datas[this.indexi].imgSrc;
+        },
+        
+    },
+    
+    methods: {
+        change(index){
+            if(index ==0 ){
+                $("audio")[0].play();
+            }
+            paus = true
+            $(".play>i").removeClass("icon-icon_play").addClass("icon-zanting")
+            this.indexi = index
+            this.btn();
+        },
+        btn(){
+            this.getName;
+           return this.$bus.$emit('myFun', this.name,this.songer,this.imgSrc)
+        }
+    }
+})
+
+var names = new Vue({
+    el:".footer",
+    data(){
+        return{
+            datas:"我是b组件的内容",
+            num:"天外来物",
+            name:"薛之谦",
+            imgSrc:"images/4.jpg"
+        }
+    },
+    mounted() {
+       this.$bus.$on('myFun',(data,data2,data3) => {
+            this.num = data
+            this.name = data2
+            this.imgSrc = data3
+        })
+    }    
+})
+var audio = $("audio")[0],
+    paus = false;
+window.onload=function (){
+    audio.pause();
+}
+$(".play").click(function(){
+    if(paus){
+        audio.pause();
+        paus = false;
+        $(".play>i").removeClass("icon-zanting").addClass("icon-icon_play")
+
+    }else{
+        audio.play();
+        paus = true;
+        $(".play>i").removeClass("icon-icon_play").addClass("icon-zanting")
+       
+    }
+})
+$(".top").click(function(){
+    paus = true
+    $(".play>i").removeClass("icon-icon_play").addClass("icon-zanting")
+    if(newV.indexi<=0){
+        newV.indexi = newV.datas.length -1
+        newV.btn();
+    }else{
+    newV.indexi-=1
+    newV.btn();
+    }
+})
+$(".next").click(function(){
+    $(".play>i").removeClass("icon-icon_play").addClass("icon-zanting")
+    paus = true
+    if(newV.indexi>newV.datas.length-2){
+        newV.indexi = 0
+        newV.btn();
+    }else{
+    newV.indexi+=1
+    newV.btn()
+    }
+})
+</script>

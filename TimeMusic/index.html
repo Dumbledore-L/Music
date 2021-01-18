@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="fonts/iconfont.css" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css" rel="stylesheet">
+<!--<link href="fonts/iconfont%20(2).css" rel="stylesheet">-->
+<body>
+<!--placeholder 表单里面默认的占位符-->
+<!--<input type="search" placeholder="请输入歌名">-->
+<header>
+    <div class="sectuin-inner">
+        <h1 class="logo">
+            <a href="#">
+                <img src="images/logo2.png" alt="" title="千千音乐">
+            </a>
+        </h1>
+        <nav class="nav">
+            <a href="#1" class="on">发现音乐</a>
+            <a href="#2">随身听</a>
+            <a href="#3">客户端</a>
+            <a href="#4">VIP</a>
+            <a href="#5">音乐</a>
+            <a href="#6">演出</a>
+        </nav>
+        <div class="serch-box">
+            <input type="text" placeholder="请输入歌名、歌词、歌手或专辑">
+            <i class="iconfont icon-search"></i>
+        </div>
+        <div class="login">
+            <div class="login-title">
+                <img src="images/login.jpg" alt="">
+            </div>
+            <span v-on:mouseenter="alogin()" >{{msg}}</span>
+            <a href="login.html"><div class="to"  v-on:mouseout="alogint()">去登陆</div></a>
+        </div>
+    </div>
+    <nav class="sub-nav">
+        <a href="#" style="color: #e13228">推荐</a>
+        <a href="#12"  >歌单</a>
+        <a href="#7">歌手</a>
+        <a href="#8">榜单</a>
+        <a href="#9">分类</a>
+        <a href="#10" >MV</a>
+        <a href="#11">U榜</a></nav>
+</header>
+<div class="home-view">
+    <section class="mod-main">
+        <section class="mod-hot-songlist" >
+            <h2 class="mod-title">热门歌单
+                        <a href="#">更多 </a>
+                        <span class="btns">
+                    <i class="iconfont icon-arrow-lift"></i>
+                    <i class="iconfont icon-arrow-right"></i>
+                </span>
+                        </h2>
+                        <div class="contauner-hot-songlist">
+                            <ul>
+                                <li><a href="#15">
+                                    <div class="img-box">
+                                        <img src="images/1.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>我的名字<br></h3>
+                                    <h2>--焦麦奇</h2>
+                                </a></li>
+                                <li><a href="#">
+                                    <div class="img-box">
+                                        <img src="images/2.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>你是人间四月天<br></h3>
+                                    <h2>--邵帅</h2>
+                                </a></li>
+                                <li><a href="#">
+                                    <div class="img-box">
+                                        <img src="images/3.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>如果当时2020<br></h3>
+                                    <h2>--许嵩&朱婷婷</h2>
+                                </a></li>
+                                <li><a href="#17">
+                                    <div class="img-box">
+                                        <img src="images/4.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>天外来物<br></h3>
+                                    <h2>--薛之谦</h2>
+                                </a></li>
+                                <li><a href="#16">
+                                    <div class="img-box">
+                                        <img src="images/5.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>路过人间<br></h3>
+                                    <h2>--郁可唯</h2>
+                                </a></li>
+                                <li><a href="#20">
+                                    <div class="img-box">
+                                        <img src="images/6.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>是但求其爱<br></h3>
+                                    <h2>--陈奕迅</h2>
+                                </a></li>
+                                <li><a href="#21">
+                                    <div class="img-box">
+                                        <img src="images/7.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>水星记<br></h3>
+                                    <h2>--郭顶</h2>
+                                </a></li>
+
+                                <li><a href="#30">
+                                    <div class="img-box">
+                                        <img src="images/8.jpg" alt="" />
+                                        <div class="play">
+                                            <i class="iconfont icon-play-fill"></i>
+                                        </div></div>
+                                    <h3>像我这样的人<br></h3>
+                                    <h2>--毛不易</h2>
+                                </a></li>
+                            </ul>
+                        </div>
+        </section>
+        <section class="mod-tag">
+            <h2 class="mod-title">分类听歌
+                <a href="#">更多 </a>
+            </h2>
+            <div class="mod-tag-box">
+                <h3><a href="#13"> 情歌</a></h3>
+                <h3><a href="#14"> 轻音乐</a></h3>
+                <h3><a href="#15"> 古典</a></h3>
+                <h3><a href="#16"> 流行</a></h3>
+                <h3><a href="#17"> 说唱</a></h3>
+                <h3><a href="#18"> 爵士乐</a></h3>
+                <h3><a href="#19"> 80后 </a></h3>
+                <h3><a href="#20"> 民歌</a></h3>
+                <h3><a href="#21"> 网络</a></h3>
+                <h3><a href="#22"> 摇滚</a></h3>
+                <h3><a href="#23"> 安静</a></h3>
+                <h3><a href="#24"> 儿童</a></h3>
+            </div>
+        </section>
+        <section class="mod-fm">
+            <h2 class="mod-title">推荐电台
+                <a href="#">更多 </a>
+            </h2>
+            <div class="mod-fm-box">
+                <ul>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-diantai"></i>
+                        </span>
+                        <h4>私人电台</h4>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-yundong"></i>
+                        </span>
+                        <h4>运动</h4>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-B"></i>
+                        </span>
+                        <h4>声音恋人</h4>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-gongzuo"></i>
+                        </span>
+                        <h4>工作</h4>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-zaijia"></i>
+                        </span>
+                        <h4>在家</h4>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-wuxianshangwang-"></i>
+                        </span>
+                        <h4>上网冲浪</h4>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-shuimian"></i>
+                        </span>
+                        <h4>助眠解压</h4>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="icons">
+                            <i class="iconfont icon-agora_-dianyin"></i>
+                        </span>
+                        <h4>电音趴</h4>
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <section class="mod-rank">
+        <h2 class="mod-title">
+            排行榜
+            <a href="#" class="more">
+                更多
+            </a>
+        </h2>
+        <div class="mod-rank-box">
+        <ul>
+            <li class="mod-news">
+                <h2>新歌榜
+                <div class="arrow">
+                    <i class="iconfont icon-sound-filling-fill"></i>
+                </div>
+                </h2>
+                <div class="mod-rank-list">
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                                <h4>郁可唯</h4>
+                        </div>
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+<!--               -->
+            </li>
+            <li class="mod-news">
+                <h2>新歌榜
+                    <div class="arrow">
+                        <i class="iconfont icon-sound-filling-fill"></i>
+                    </div>
+                </h2>
+                <div class="mod-rank-list">
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+
+                </div></li>
+            <li class="mod-news">
+                <h2>新歌榜
+                    <div class="arrow">
+                        <i class="iconfont icon-sound-filling-fill"></i>
+                    </div>
+                </h2>
+                <div class="mod-rank-list">
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+                    <div class="rank-list-item">
+                        <span>01</span>
+                        <a href="#"><img src="images/5.jpg" alt=""></a>
+                        <div class="info">
+                            <h3>路过人间</h3>
+                            <h4>郁可唯</h4>
+                        </div>
+
+                        <div class="download">
+                            <i class="iconfont icon-iconfontzhizuobiaozhun20"></i>
+                            <i class="iconfont icon-shoucang1"></i>
+
+                            <i class="iconfont icon-download" style="font-size: 30px"></i>
+
+                        </div>
+                    </div>
+
+                </div></li>
+        </ul>
+        </div>
+    </section>
+</div>
+<div class="carousel">
+        <ul class="carousel-imgbox">
+            <li class="img1"><img src="images/bg5.webp" alt=""></li>
+            <li class="img2"><img src="images/3351862.webp" alt=""></li>
+            <li class="img3"><img src="images/3354297.webp" alt=""></li>
+            <li class="img4"><img src="images/3354768.webp" alt=""></li>
+        </ul>
+<div class="btn-box">
+    <button class="left-btn"><i class="iconfont icon-arrow-lift"></i></button>
+    <button class="right-btn"><i class="iconfont icon-arrow-right"></i></button>
+</div>
+    <ul id="box-radius">
+        <li v-for="item in lens" class="btn-radius">
+        </li>
+    </ul>
+</div>
+<div class="top">Top</div>
+<div class="hint"><p>请先登录</p>
+<button class="btn1">取消</button>
+        <a href="login.html"><button class="btn2">去登陆</button></a>
+</div>
+
+<footer>
+    <ul class="end">
+        <li>服务条款</li>
+        <li>隐私政策</li>
+        <li>意见反馈</li>
+    </ul>
+</footer>
+
+
+</body>
+</html>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/Vuedemo.js"></script>
+<script type="text/javascript" src="js/index.js">
+</script>

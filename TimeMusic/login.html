@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        /*background-color: #dd4823;*/
+        background: url("images/bg2.jpg");
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-size:cover ;
+    }
+    .cbox{
+        width: 500px;
+        height: 500px;
+        border: 1px solid #ccc;
+        border-radius: 10%;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -250px;
+        overflow: hidden;
+    }
+   .login-box{
+       width: 1000px;
+       height: 100%;
+       background-color:  deepskyblue;
+       float: left;
+
+   }
+   .login{
+       width: 500px;
+       height: 500px;
+       float: left;
+       position: relative;
+   }
+   .title-box{
+       /*width: 300px;*/
+       height: 100px;
+       text-align: center;
+       line-height: 100px;
+       border-bottom: #cccccc 1px solid;
+       font-family: "微软雅黑",serif;
+       font-weight: 700;
+       font-size: 30px;
+
+   }
+   .login-go{
+       width: 100px;
+       height: 100px;
+       float: left;
+       cursor: pointer;
+       margin-left: 175px;
+
+   }
+   .register-go{
+       float: left;
+       cursor: pointer;
+   }
+   .register{
+       width: 500px;
+       height: 100%;
+       background: cornflowerblue;
+       float: left;
+       position: relative;
+   }
+   .move{
+       background-color: cornflowerblue;
+   }
+   .input-box{
+       width: 300px;
+       height: 300px;
+       top: 50%;
+       left: 50%;
+       margin-top: -140px;
+       margin-left: -150px;
+       overflow: hidden;
+       position: absolute;
+
+   }
+   .input-box input{
+       width: 250px;
+       height: 30px;
+       margin-left: 25px;
+       margin-top: 40px;
+       /*//去掉input样式*/
+       -webkit-appearance: none !important;
+       outline: none;
+       padding-left: 15px;
+   }
+   .input-box input:nth-last-child(1){
+       width: 180px;
+       height: 50px;
+       background-color: #fafafa;
+       border: none;
+       cursor: pointer;
+       margin-top: 30px;
+       margin-left: 75px;
+       padding: 0;
+       float: left;
+   }
+</style>
+<body>
+<div class="cbox">
+    <div class="login-box">
+        <div class="login">
+            <div class="title-box">
+                <p class="login-go">登录&nbsp/</p>
+                <p class="register-go">注册</p>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="请输入账号">
+                <input type="password" placeholder="请输入密码">
+                <input type="password" placeholder="请确认密码">
+                <input  class="post" type="button" value="注册">
+               </div>
+        </div>
+        <div class="register ">
+            <div class="title-box move">
+                <p class="login-go">登录&nbsp/</p>
+                <p class="register-go">注册</p>
+            </div>
+            <div class="input-box">
+                <input class="num" type="text" v-model="msg" placeholder="请输入账号">
+                <input class="password" type="password" placeholder="请输入密码">
+<!--                <input type="password" placeholder="请输入密码">-->
+                <input  class="get" type="button" value="登录">
+            </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+<script src="js/vue.js"></script>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+
